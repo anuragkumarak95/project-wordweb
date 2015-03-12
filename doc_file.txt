@@ -61,7 +61,7 @@ computer_programs
 program_takes
 analogous
 surrounding
-Sapir�Whorf
+Sapir_Whorf
 hypothesis
 linguistics
 cognitive
