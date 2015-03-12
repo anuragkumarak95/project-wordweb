@@ -1,0 +1,49 @@
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+#include<stdlib.h>
+#include<String.h>
+#include<time.h>
+
+/*void srand()  //function used to manually randomize the index of random::
+{unsigned int sval;
+time_t t; // t is time type variable
+sval=(unsigned)time(&t); srand(sval);
+	for(int i=0;i<5;++i)
+	{int num=rand()%100;
+	//cout<<num<<' ';
+	}
+}*/
+void main(){
+clrscr();
+       //	srand();
+	ifstream file("doc_file.txt",ios::nocreate);
+       /*	for(int j=0;j<10;j++)
+	{ int a = random(80);
+	  char line[20];
+	  for(int k=0;k<a;k++)
+	  { file.getline(line,20);
+	    if(k==a-1){if(j%10==0){cout<<endl;}cout<<"\t"<<line;}
+	  }
+	}*/
+	char line[50],a[50];
+	int count=0;
+	cout<<"Enter the string you wanna search:"<<endl;
+	cin>>a;
+	cout<<endl<<a<<" is in the text at:\n";
+	for(int i=1;i<=85;i++)
+	{ file.getline(line,50);
+
+	  if(strcmp(line,a)==0){cout<<i<<"\t"<<file.tellg()<<endl;count++;}
+	}
+	if(count==0){cout<<"Not present in the doc...sorry!!";}
+	cout<<"\t"<<file.tellg();
+	cout<<"Try Again::[y/n]:";
+	char ch=' ';
+	cin>>ch;
+	if(ch=='y'||ch=='Y'){main();}
+	else if (ch=='n'||ch=='N'){exit(1);}
+
+file.close();
+getch();
+}
