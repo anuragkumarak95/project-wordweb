@@ -4,6 +4,15 @@
 #include<fstream.h>
 #include<stdlib.h>
 #include<String.h>
+void srand()
+{unsigned int sval;
+time_t t; // t is time type variable
+sval=(unsigned)time(&t); srand(sval);
+	for(int m=0;m<5;++m)
+	{int num1=rand()%100;
+	//cout<<num<<' ';
+	}
+}
 
 void main(){
 clrscr();
@@ -29,7 +38,8 @@ while(file.eof()==0)
 		{toog=1;}
        }
        if(i==0||toog==0)
-		{int ran=random(2);
+		{ //srand();
+		  int ran=random(2);
 	 if(ran==0)
 	   {ind_list[i]=file.tellg();}
 	 else{i--;}}//entering the unique location of the words nieghbouring the given word.
@@ -50,6 +60,13 @@ for(int j=0;j<9;j++)
   file_1.getline(line_b,50);
   cout<<"\t"<<ind_list[j]<<"\t"<<line_b;
 }
-getch();
 file_1.close();
+
+//The repeat the code page::
+char ch=' ';
+cout<<"\n\n\nWanna try again??: [y/n]::";
+cin>>ch;
+if(ch=='y'||ch=='Y'){main();}
+else if(ch=='n'||ch=='N'){exit(1);}
+getch();
 }
