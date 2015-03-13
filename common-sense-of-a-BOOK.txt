@@ -1,0 +1,7 @@
+we were thinking of what kind of relations we can logically generate between words to implement in our game.
+
+sudden a idea struck us, why not use pre- baked logistics. where can we find a set of words that are already
+logically sound to put in such a vast concept, the first option that came is the only option we were looking
+for, i,e,# BOOKs.it can provide us most of the common sensible relations without any physical effort. lets try
+it out. we will update the page when we will come with all the solutions required to inherit such concept in our
+source code.
