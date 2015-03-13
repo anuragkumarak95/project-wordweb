@@ -1,0 +1,55 @@
+#include<iostream.h>
+#include<time.h>
+#include<conio.h>
+#include<fstream.h>
+#include<stdlib.h>
+#include<String.h>
+
+void main(){
+clrscr();
+int ind_list[9],tell[6]={0,0,0,0,0,0};
+
+char word[50],line[50];
+ifstream file("doc_file.txt",ios::nocreate);
+cout<<"Enter a word::";
+cin>>word;
+while(file.eof()==0)
+{ file.getline(line,50);
+  tell[5]=tell[4];tell[4]=tell[3];
+  tell[3]=tell[2];tell[2]=tell[1];
+  tell[1]=tell[0];tell[0]=file.tellg();
+  if(strcmp(line,word)==0)//to check if the word entered and any line in the doc is equal to each other in refrence to string::
+  { cout<<"yess ";
+    file.seekg(tell[5]);
+    for(int i=0;i<9;i++)
+    { int toog=0;
+      file.getline(line,50);
+      for(int k=0;k<i;k++)//to check for unique entry in the list::
+       { if(ind_list[k]==file.tellg())
+		{toog=1;}
+       }
+       if(i==0||toog==0)
+		{int ran=random(2);
+	 if(ran==0)
+	   {ind_list[i]=file.tellg();}
+	 else{i--;}}//entering the unique location of the words nieghbouring the given word.
+       else{i--;}
+    }
+
+  }//cout<<file.tellg()<<"\t";
+}
+file.close();//to complex to use agian for seeking::
+
+// opening the doc again to use it in fresh file..
+ifstream file_1("doc_file.txt",ios::nocreate);
+cout<<endl<<endl<<file_1.tellg();
+char line_b[50];
+for(int j=0;j<9;j++)
+{ file_1.seekg(ind_list[j]);
+  cout<<endl<<file_1.tellg();
+  file_1.getline(line_b,50);
+  cout<<"\t"<<ind_list[j]<<"\t"<<line_b;
+}
+getch();
+file_1.close();
+}
