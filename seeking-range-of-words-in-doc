@@ -1,0 +1,36 @@
+#include<iostream.h>
+#include<conio.h>
+#include<fstream.h>
+#include<stdlib.h>
+
+void main(){
+clrscr();
+ifstream file("doc_file.txt",ios::nocreate);
+cout<<"Enter the stop point:";
+int n,tell[5]={0,0,0,0,0};
+cin>>n;
+char line[50];
+  for(int i=0;i<n;i++)
+  { file.getline(line,50);
+    tell[4]=tell[3];
+    tell[3]=tell[2];
+    tell[2]=tell[1];
+    tell[1]=tell[0];
+    tell[0]=file.tellg();
+  }
+  cout<<endl<<file.tellg();
+  cout<<endl;
+  for(i=0;i<4;i++){cout<<tell[i]<<"\t";}
+  file.seekg(tell[4]);
+  for(i=0;i<7;i++){
+    file.getline(line,50);
+    cout<<endl<<file.tellg()<<"\t"<<line;
+  }
+  char ch=' ';
+  cout<<"\nAgain??[y/n]::";
+  cin>>ch;
+  if(ch=='y'||ch=='Y'){main();}
+  else if(ch=='n'||ch=='N'){exit(1);}
+file.close();
+getch();
+}
