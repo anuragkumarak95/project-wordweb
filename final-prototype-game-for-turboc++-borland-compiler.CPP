@@ -28,8 +28,8 @@ cout<<endl<<"\\              / ____  ___  __   \\                /  ____  ____ "
 int strtcol,finalcol,counter=0;
 // ^ declared all the indexes..here..!!:
 	for(int i=0;i<num;i++){
-	strtcol=random(60);
-	do{finalcol=random(60);
+	do{strtcol=random(60);}while(strtcol<10);
+	do{do{finalcol=random(60);}while(finalcol<10);
        //cout<<strtcol<<"\t"<<strtrow<<endl<<finalcol<<"\t"<<finalrow<<endl<<endl;
 	}while(finalcol==strtcol);
 			     }
