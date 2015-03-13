@@ -1,0 +1,17 @@
+int finalcol,finalrow,strtcol,strtrow,colindex,rowindex,stepcounter=0;
+String item[int][int];
+//generate the start and end points::
+1. generate 2 random numbers; finalcol,finalrow under limit no_of_columns,no_of_rows & if item[finalcol][finalrow]==NULL :: REPEAT
+2. again generate 2 random no.; strtcol,strtrow under the same limits. if strtcol==finalstrt ||strtrow==finalrow then :: REPEAT... (to achieve distinct start and end points ).
+//show the relatively linked context::
+3.pointer=item[strtcol][strtrow];
+if strtrow==0 then :: display all the row content.
+else :: search value of pointer under all the columns & display all the columns having the value of pointer.
+//perform the forward linking that user enters::
+4. get data from user: serach for that context in all the columns ;note the colindex,rowindex of the point in item[][] where the context is present.
+5.then put strtcol=colindex, strtrow=rowindex;
+6.stepcounter++; AND return to 3rd STEP.
+//WIN SCENARIO::
+7.if pointer = item[finalcol][finalrow] then : user have reached the finishline word, display value of stepcounter; and announce that user have finished the task...GAME OVER.
+//FORCECLOSE
+8. if data from user==exit_code then: foreclose the applicatio through exit commands.

@@ -1,0 +1,12 @@
+we need to find which kind of database structure would be suitable for the project.it need to be lite
+and easily accessibly to the code as it may be needed to be accessed quite often.it should implement
+least use of the processor and memory to become an efficient structure.
+
+we can either use file handling in this case, but to create such web, maybe more than just 2-3 files
+  need to be made and all have to be connected simultaneously.this could complex the code but speaking
+  for myself, if this tends to be efficient in the big picture, then the code
+is not a big deal at all.
+
+or maybe we can use DBMS (SQL) tables for such case where all different hierarchical phases could
+become columns and the words under them as the content.in this case the table would require to be 
+connected to the code for until the program is running.if this can turn out to be efficient then i'll be glad.
