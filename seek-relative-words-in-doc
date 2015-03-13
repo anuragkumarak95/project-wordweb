@@ -4,6 +4,7 @@
 #include<fstream.h>
 #include<stdlib.h>
 #include<String.h>
+
 void srand()
 {unsigned int sval;
 time_t t; // t is time type variable
@@ -28,25 +29,31 @@ while(file.eof()==0)
   tell[3]=tell[2];tell[2]=tell[1];
   tell[1]=tell[0];tell[0]=file.tellg();
   if(strcmp(line,word)==0)//to check if the word entered and any line in the doc is equal to each other in refrence to string::
-  { cout<<"yess ";
+  { cout<<"yess ";if(file.tellg()>=700){cout<<"cant use this:\n\npress enter to choose again::";getch();main();}
     file.seekg(tell[5]);
     for(int i=0;i<9;i++)
     { int toog=0;
+
       file.getline(line,50);
       for(int k=0;k<i;k++)//to check for unique entry in the list::
-       { if(ind_list[k]==file.tellg())
+       { if(file.tellg()>=800){file.seekg(tell[5]);continue;}
+	 //cout<<"\t"<<file.tellg();
+	 if(ind_list[k]==file.tellg())
 		{toog=1;}
        }
        if(i==0||toog==0)
 		{ //srand();
-		  int ran=random(2);
-	 if(ran==0)
+		  int ran=random(20);
+		  //cout<<ran<<"\t";
+	 if(ran<=10)
 	   {ind_list[i]=file.tellg();}
 	 else{i--;}}//entering the unique location of the words nieghbouring the given word.
        else{i--;}
+       cout<<i<<"\t";
     }
 
   }//cout<<file.tellg()<<"\t";
+
 }
 file.close();//to complex to use agian for seeking::
 
