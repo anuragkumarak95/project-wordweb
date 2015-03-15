@@ -1,4 +1,5 @@
-/*This code operates on the file doc_file.txt that is also provided in the prohect files, please to copy it also in the same link as the project code..*/
+/*This code operates on the file doc_file.txt that is also provided in the provided files,
+please do copy it also in the same link as the project code..*/
 
 #include<iostream.h>
 #include<time.h>
