@@ -1,3 +1,6 @@
+/*this project is working on doc_file.txt file,
+also provide in the project link so do copy that also to the same directory as the cpp file.*/
+
 #include<iostream.h>
 #include<time.h>
 #include<conio.h>
