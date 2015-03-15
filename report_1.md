@@ -8,4 +8,6 @@ But our much important issue for now is to extend this projects machine learning
 we will introduce the concept of databasing the scores and performance of the logined players to the game,
 so that the game could understand its player and provide him/her with the level of challenge that he/she deserves.
 
-And also one of our concerns is to export this project to the android studio format and create a full equiped android application from this concept. lets play for the best and code till the sunshine comes...
+And also one of our concerns is to export this project to the android studio format and create a full equiped android application from this concept. 
+
+#lets pray for the best and code till the sunshine comes...
